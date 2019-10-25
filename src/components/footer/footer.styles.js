@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledFooter = styled.footer`
   align-content: center;
   fill-opacity: '0.7';
-  background-color:grey;
+  background-color: grey;
 `;
 export const StyledFooterEnd = styled.div`
   text-align: center;
@@ -16,7 +16,7 @@ export const StyledFooterGrid = styled.div`
   margin: auto;
   display: grid;
   grid-template-areas: 'info socials links ';
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 2fr 1fr;
   grid-gap: 50px;
   padding: 20px 200px 20px;
   align-content: center;
@@ -37,6 +37,9 @@ export const StyledFooterInfo = styled.div`
 `;
 export const StyledFooterSocials = styled.div`
   grid-area: socials;
+  div {
+    justify-content: start;
+  }
 
   h3 {
     font-family: 'Montserrat', sans-serif;

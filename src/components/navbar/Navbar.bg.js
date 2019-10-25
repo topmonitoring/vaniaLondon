@@ -4,8 +4,8 @@ import {useSpring, animated, config} from 'react-spring';
 
 import Logo from './Logo';
 import BurgerMenu from './BurgerMenu';
-import CollapseMenu from './CollapseMenu';
-import NavbarLinks from './navbar-links';
+import CollapseMenu from './CollapseMenu.bg';
+import NavbarLinks from './navbar-links.bg';
 import SelectLanguage from '../select-langlage/select-langlege';
 
 const Navbar = props => {

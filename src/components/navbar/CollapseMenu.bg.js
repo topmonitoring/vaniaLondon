@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import NavbarLinks from './navbar-links';
+import NavbarLinks from './navbar-links.bg';
 import {useSpring, animated} from 'react-spring';
 
 const CollapseMenu = props => {

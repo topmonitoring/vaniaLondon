@@ -1,21 +1,18 @@
-import React from 'react';
-import {graphql} from 'gatsby';
-import Layout from '../components/layout/layout.component';
-import Img from 'gatsby-image';
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout/layout.component";
 
 const HomePage = props => {
   const about = props.data.allContentfulHomePage.edges[0].node.about.about;
-  const fluid = props.data.allContentfulHomePage.edges[0].node.photo.fluid;
 
   //Create page with locale bg-BG
   return (
     <Layout data={props.data} location={props.location}>
       <div>
-        <Img style={{width: '100%', heigth: '80vh'}} fluid={fluid} />
         <h1>Моето име е</h1>
         <div
           dangerouslySetInnerHTML={{
-            __html: about,
+            __html: about
           }}
         />
       </div>
@@ -35,7 +32,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulHomePage(filter: {node_locale: {eq: "bg-BG"}}) {
+    allContentfulHomePage(filter: { node_locale: { eq: "bg-BG" } }) {
       edges {
         node {
           node_locale

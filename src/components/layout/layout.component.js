@@ -1,7 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {GlobalStyles} from './globalStyles';
-import Heder from '../heder/heder.component';
-import Footer from '../footer/footer.component';
+import HederEN from '../heder/heder';
+import HederBG from '../heder/heder.bg';
+import FooterEN from '../footer/footer';
+import FooterBG from '../footer/footer.bg';
 import SEO from '../seo/seo.component';
 
 import {getCurrentLangKey, getLangs, getUrlForLang} from 'ptz-i18n';
@@ -38,9 +40,13 @@ const TemplateWrapper = props => {
       >
         <SEO />
         <GlobalStyles />
-        <Heder langs={langsMenu} />
+        {langKey === 'en' ? (
+          <HederEN langs={langsMenu} />
+        ) : (
+          <HederBG langs={langsMenu} />
+        )}
         {children}
-        <Footer />
+        {langKey === 'en' ? <FooterEN /> : <FooterBG />}
       </div>
     </IntlProvider>
   );

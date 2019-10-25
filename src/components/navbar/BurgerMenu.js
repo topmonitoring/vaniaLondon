@@ -19,7 +19,6 @@ const Wrapper = styled.div`
   position: relative;
   cursor: pointer;
   display: block;
-  
 
   & span {
     display: block;
@@ -28,6 +27,7 @@ const Wrapper = styled.div`
     height: 0.4rem;
     margin-bottom: 0.7rem;
     transition: all ease-in-out 0.2s;
+    background-color: white;
   }
 
   .open span:nth-child(2) {

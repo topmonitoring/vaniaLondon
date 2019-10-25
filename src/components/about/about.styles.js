@@ -1,20 +1,21 @@
-import styled from 'styled-components';
-import Img from 'gatsby-image';
-import {getBackgroundForBlogPostsPreview} from '../theme/colors';
+import styled from "styled-components";
+import Img from "gatsby-image";
 
 export const StyledAboutSection = styled.div`
   width: 60%;
   margin: 10px auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-content: center;
-  background-color: ${getBackgroundForBlogPostsPreview};
+  background-color: grey;
+  border-radius: 5px;
   @media screen and (max-width: 800px) {
     flex-direction: column;
-    width:90vw;
+    width: 90vw;
   }
 `;
 export const StyledAboutInfo = styled.div`
+  width: 50%;
   margin: 20px auto;
   padding: 50px;
   font-size: 18px;
@@ -23,15 +24,16 @@ export const StyledAboutInfo = styled.div`
   }
   @media screen and (max-width: 800px) {
     width: 90%;
-    padding:5px;
+    padding: 5px;
   }
 `;
-export const StyledImg = styled (Img)`
-  height: 600px;
-  width: 90%;
+export const StyledImg = styled(Img)`
+  height: 400px;
+  width: 400px;
   margin: auto;
   @media screen and (max-width: 800px) {
     height: 250px;
+    width: 90%;
   }
 `;
 export const StyledName = styled.h3`

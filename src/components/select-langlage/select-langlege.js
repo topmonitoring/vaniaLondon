@@ -1,10 +1,32 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import {FormattedMessage} from 'react-intl';
+import styled from 'styled-components';
+
+const StyledLink = styled(Link)`
+  width: auto;
+  margin: auto;
+`;
+const StyledUl = styled.ul`
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  list-style-type: none;
+  a {
+    li {
+      float: left;
+      width: auto;
+      list-style: outside none none;
+      &:hover {
+        color: aqua;
+      }
+    }
+  }
+`;
 
 const SelectLanguage = props => {
   const links = props.langs.map(lang => (
-    <Link
+    <StyledLink
       to={lang.link}
       key={lang.langKey}
       style={{
@@ -12,19 +34,19 @@ const SelectLanguage = props => {
       }}
     >
       <li selected={lang.selected}>{lang.langKey}</li>
-    </Link>
+    </StyledLink>
   ));
 
   return (
-    <section>
-      <header
-        style={{
-          color: 'white',
-        }}
-      >
-        <FormattedMessage id="selectLanguage" />
-      </header>
-      <ul>{links}</ul>
+    <section
+      style={{
+        color: 'white',
+        fontSize: '16px',
+      }}
+    >
+      <FormattedMessage id="selectLanguage" />
+
+      <StyledUl>{links}</StyledUl>
     </section>
   );
 };

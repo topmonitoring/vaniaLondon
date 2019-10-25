@@ -7,7 +7,7 @@ const BookASessionPage = props => {
   const session =
     props.data.allContentfulBookSessionPage.nodes[0].sessionScaduler
       .childMarkdownRemark.html;
-  console.log(props);
+
   return (
     <Layout data={props.data} location={props.location}>
       <div>

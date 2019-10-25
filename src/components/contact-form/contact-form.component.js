@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { navigate } from 'gatsby-link'
+import React, {useState} from 'react';
+import {navigate} from 'gatsby-link';
 import {
   StyledEmailInput,
   StyledFormGrid,
@@ -7,34 +7,34 @@ import {
   StyledSubmitButton,
   StyledNameInput,
   StyledSelectInput,
-} from './contact-form.styles'
+} from './contact-form.styles';
 
 function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
+    .join('&');
 }
 
 const FormComponent = () => {
-  const [inputs, setInputs] = useState({})
-  const [selectValue, setSelectValue] = useState('none selected')
+  const [inputs, setInputs] = useState({});
+  const [selectValue, setSelectValue] = useState('none selected');
 
   const handleSelectChange = e => {
-    e.persist()
-    setSelectValue(e.target.value)
-  }
+    e.persist();
+    setSelectValue(e.target.value);
+  };
 
   const handleChange = e => {
-    e.persist()
-    setInputs(inputs => ({ ...inputs, [e.target.name]: e.target.value }))
-  }
+    e.persist();
+    setInputs(inputs => ({...inputs, [e.target.name]: e.target.value}));
+  };
 
   const handleSubmit = e => {
-    e.preventDefault()
-    const form = e.target
+    e.preventDefault();
+    const form = e.target;
     fetch('/contact', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
       body: encode({
         'form-name': form.getAttribute('name'),
         about: selectValue,
@@ -42,8 +42,8 @@ const FormComponent = () => {
       }),
     })
       .then(() => navigate(form.getAttribute('action')))
-      .catch(error => alert(error))
-  }
+      .catch(error => alert(error));
+  };
 
   return (
     <form
@@ -91,18 +91,15 @@ const FormComponent = () => {
           onChange={handleSelectChange}
         >
           <option value="none selected">What is your message about?</option>
-          <option value="I want to Hire you for a project">
-            I want to Hire you for a project
-          </option>
-          <option value="I want to contribute">I want to contribute</option>
-          <option value="Interview or media request">
-            Interview or media request
-          </option>
-          <option value="Looking for help to grow my buisness/audiance">
-            Looking for help to grow my buisness/audiance
+          <option value="I want to Hire you">I want to hire you</option>
+          <option value="I want you to speak at my event">
+            I want you to speak at my event
           </option>
           <option value="Looking for general advice">
             Looking for general advice
+          </option>
+          <option value="Interview or media request">
+            Interview or media request
           </option>
           <option value="Just want to say Thank You">
             Just want to say Thank You
@@ -122,7 +119,7 @@ const FormComponent = () => {
         <StyledSubmitButton type="submit">Send</StyledSubmitButton>
       </StyledFormGrid>
     </form>
-  )
-}
+  );
+};
 
-export default FormComponent
+export default FormComponent;

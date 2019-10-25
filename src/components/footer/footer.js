@@ -10,17 +10,13 @@ import {
 } from './footer.styles';
 
 import './footer.styles.js';
-import NavbarLinks from '../navbar/navbar-links.component';
+import NavbarLinks from '../navbar/navbar-links';
 const Footer = () => (
   <StyledFooter>
     <StyledFooterGrid>
       <StyledFooterInfo>
         <h3>ABOUT</h3>
-        <span>
-          This blog purpose is to educate users, allow programmers to discover
-          practical solutions and new technologies in a fast and efficient whey.
-          And also share their knowledge with each other.
-        </span>
+        <span>Welcome to vanyalondon.com</span>
       </StyledFooterInfo>
       <StyledFooterSocials>
         <h3>SOCIAL MEDIA</h3>
@@ -32,13 +28,7 @@ const Footer = () => (
       </div>
     </StyledFooterGrid>
     <StyledFooterEnd>
-      Created by{' '}
-      <b>
-        <a href="https://github.com/topmonitoring" target="blank">
-          <strong> Dobrin Dobrev</strong>
-        </a>
-      </b>{' '}
-      © {new Date ().getFullYear ()} Powerd by Gatsby and Contentfull{' '}
+      vanyalondon.com © {new Date().getFullYear()} All rights reserved{' '}
     </StyledFooterEnd>
   </StyledFooter>
 );

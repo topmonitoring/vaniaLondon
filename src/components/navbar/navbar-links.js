@@ -7,21 +7,19 @@ const NAV_ITEMS = ['About', 'Contact', 'Jewellery'];
 const NavbarLinks = ({isFooter}) => (
   <>
     <div>
-      <StyledNavLink to={`/`} key="home">
-        Home
-      </StyledNavLink>
+      <StyledNavLink to={`/en`}>Home</StyledNavLink>
     </div>
-    {NAV_ITEMS.map(navItem => (
-      <div key={navItem}>
-        <StyledNavLink to={`en/${navItem.toLowerCase()}`}>
-          {navItem}
-        </StyledNavLink>
-      </div>
-    ))}
     <div>
-      <StyledNavLink to={`/en/bookasession`} key="bookasession">
-        Book A Session
-      </StyledNavLink>
+      <StyledNavLink to={`/en/about`}>About</StyledNavLink>
+    </div>
+    <div>
+      <StyledNavLink to={`/en/contact`}>Contact</StyledNavLink>
+    </div>
+    <div>
+      <StyledNavLink to={`/en/jewellery`}>Jewellery</StyledNavLink>
+    </div>
+    <div>
+      <StyledNavLink to={`/en/bookasession`}>Book A Session</StyledNavLink>
     </div>
   </>
 );
