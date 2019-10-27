@@ -9,8 +9,7 @@ import {
 
 const About = ({ node }) => (
   <>
-    <StyledTitle>About Vania</StyledTitle>
-    <StyledName>{node.personName}</StyledName>
+    <StyledTitle>{node.personName}</StyledTitle>
     <StyledAboutSection>
       <StyledAboutInfo
         dangerouslySetInnerHTML={{

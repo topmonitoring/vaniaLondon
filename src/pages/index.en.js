@@ -4,6 +4,9 @@ import Layout from "../components/layout/layout.component";
 import HomeCover from "../components/home-cover/home-cover";
 import styled from "styled-components";
 import CustomButton from "../components/buttons/CustomAnimatedButton";
+import YoutubeGrid from "../components/youtubeGrid/youtubeGrid";
+import CallToAction from "../components/buttons/callToAction";
+import AboutHome from "../components/about.home.section/about.home.section";
 
 const HomePage = props => {
   const about = props.data.allContentfulHomePage.edges[0].node.about.about;
@@ -19,9 +22,22 @@ const HomePage = props => {
             }}
           />
           <br />
-          <CustomButton>Learn More</CustomButton>
+          <CustomButton>Book A Session</CustomButton>
         </StyledInfo>
       </HomeCover>
+      <CallToAction bgr="grey">Theta Healing ®</CallToAction>
+      <AboutHome />
+
+      <CallToAction bgr="grey">Some of My Ameizing clients</CallToAction>
+      <YoutubeGrid />
+      <CallToAction>
+        <CustomButton>Go to Testemonials</CustomButton>
+      </CallToAction>
+      <CallToAction bgr="grey">Vanya Healing Jewellery</CallToAction>
+
+      <CallToAction>
+        <CustomButton>Go to Jewellery page</CustomButton>
+      </CallToAction>
     </Layout>
   );
 };
@@ -48,18 +64,6 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulYoutubeVideo(filter: { node_locale: { eq: "en-US" } }) {
-      edges {
-        node {
-          title
-          embedCode {
-            childMarkdownRemark {
-              html
-            }
-          }
-        }
-      }
-    }
   }
 `;
 
@@ -79,4 +83,9 @@ const StyledInfo = styled.div`
   background-color: grey;
   opacity: 0.8;
   border-radius: 5px;
+  @media screen and (max-width: 800px) {
+    width: 90vw;
+    height: 80vh;
+    font-size: 16px;
+  }
 `;

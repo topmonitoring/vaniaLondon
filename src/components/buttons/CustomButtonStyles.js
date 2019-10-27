@@ -1,22 +1,21 @@
-import styled from 'styled-components';
-import {animated} from 'react-spring';
+import styled from "styled-components";
+import { animated } from "react-spring";
 
 export const AnimatedButton = styled(animated.button)`
+  margin: auto;
   background: #34b3a0;
   color: black;
-  font-size: 1.2rem;
+  font-size: 16px;
   font-weight: 600;
   padding: 1rem 2rem;
   text-decoration: none;
-  width: 30%;
-  margin: auto;
-  transition: width 2s;
+  width: 250px;
+
   cursor: pointer;
   border: none;
   outline: none;
-
   &:hover {
-    width: 35%;
+    background: aqua;
   }
 
   @media screen and (max-width: 800px) {

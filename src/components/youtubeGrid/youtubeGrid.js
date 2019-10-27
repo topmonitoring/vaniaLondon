@@ -1,24 +1,22 @@
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
 import styled from "styled-components";
+import { StyledYoutubeGrid, StyledYoutubeVideo } from "./youtubeGrid.styles";
 
-import BackgroundImage from "gatsby-background-image";
-
-const BackgroundSection = ({ className, children }) => (
+const BackgroundSection = () => (
   <StaticQuery
     query={graphql`
       query {
-        bgr: allContentfulHomePage(filter: { node_locale: { eq: "en-US" } }) {
+        video: allContentfulYoutubeVideo(
+          filter: { node_locale: { eq: "en-US" } }
+        ) {
           edges {
             node {
-              node_locale
-              photo {
-                fluid(maxWidth: 1920, background: "rgb:000000") {
-                  ...GatsbyContentfulFluid_tracedSVG
+              title
+              code: embedCode {
+                childMarkdownRemark {
+                  html
                 }
-              }
-              about {
-                about
               }
             }
           }
@@ -26,15 +24,20 @@ const BackgroundSection = ({ className, children }) => (
       }
     `}
     render={data => {
-      const imageData = data.bgr.edges[0].node.photo.fluid;
+      const VIDEOS = data.video.edges;
       return (
-        <BackgroundImage
-          className={className}
-          fluid={imageData}
-          backgroundColor={`#040e18`}
-        >
-          {children}
-        </BackgroundImage>
+        <StyledYoutubeGrid>
+          {VIDEOS.map(({ node }) => (
+            <div key={node.title} aria-label="youtube video">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: node.code.childMarkdownRemark.html
+                }}
+              />
+              <h4>{node.title}</h4>
+            </div>
+          ))}
+        </StyledYoutubeGrid>
       );
     }}
   />

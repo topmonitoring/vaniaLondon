@@ -5657,6 +5657,17 @@ gatsby-react-router-scroll@^2.1.14:
     scroll-behavior "^0.9.10"
     warning "^3.0.0"
 
+gatsby-remark-responsive-iframe@^2.2.25:
+  version "2.2.25"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-responsive-iframe/-/gatsby-remark-responsive-iframe-2.2.25.tgz#800e7d7b432b45d8917aa302b7c076e9e0f487c1"
+  integrity sha512-3VPWbNPSSi+3wMcGtFcnZxwTLJ78VH0iltIryTEKlfn2dzWpvaQXBQ8p+EYYiyBvdP4VeOjPF+g2zNkPuN0Xaw==
+  dependencies:
+    "@babel/runtime" "^7.6.3"
+    cheerio "^1.0.0-rc.3"
+    common-tags "^1.8.0"
+    lodash "^4.17.15"
+    unist-util-visit "^1.4.1"
+
 gatsby-source-contentful@^2.0.1:
   version "2.1.50"
   resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.50.tgz#9a41d6b13b96f0ffce5b9169e8a667143f69f06f"
