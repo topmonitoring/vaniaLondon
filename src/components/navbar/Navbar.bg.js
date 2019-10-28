@@ -1,24 +1,24 @@
-import React from 'react';
-import styled from 'styled-components';
-import {useSpring, animated, config} from 'react-spring';
+import React from "react";
+import styled from "styled-components";
+import { useSpring, animated, config } from "react-spring";
 
-import Logo from './Logo';
-import BurgerMenu from './BurgerMenu';
-import CollapseMenu from './CollapseMenu.bg';
-import NavbarLinks from './navbar-links.bg';
-import SelectLanguage from '../select-langlage/select-langlege';
+import Logo from "./Logo";
+import BurgerMenu from "./BurgerMenu";
+import CollapseMenu from "./CollapseMenu.bg";
+import NavbarLinks from "./navbar-links.bg";
+import SelectLanguage from "../select-langlage/select-langlege";
 
 const Navbar = props => {
   const barAnimation = useSpring({
-    from: {transform: 'translate3d(0, -10rem, 0)'},
-    transform: 'translate3d(0, 0, 0)',
+    from: { transform: "translate3d(0, -10rem, 0)" },
+    transform: "translate3d(0, 0, 0)"
   });
 
   const linkAnimation = useSpring({
-    from: {transform: 'translate3d(0, 30px, 0)', opacity: 0},
-    to: {transform: 'translate3d(0, 0, 0)', opacity: 1},
+    from: { transform: "translate3d(0, 30px, 0)", opacity: 0 },
+    to: { transform: "translate3d(0, 0, 0)", opacity: 1 },
     delay: 800,
-    config: config.wobbly,
+    config: config.wobbly
   });
   return (
     <>
@@ -82,6 +82,9 @@ const NavLinks = styled(animated.div)`
   -webkit-column-gap: 20px;
   column-count: 5;
   column-gap: 20px;
+  div {
+    text-align: center;
+  }
 
   @media (max-width: 768px) {
     display: none;

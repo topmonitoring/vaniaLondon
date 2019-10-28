@@ -1,8 +1,8 @@
-import React from 'react';
-import {Link} from 'gatsby';
-import styled from 'styled-components';
+import React from "react";
+import { Link } from "gatsby";
+import styled from "styled-components";
 
-const NavbarLinks = ({isFooter}) => (
+const NavbarLinks = ({ isFooter }) => (
   <>
     <div>
       <StyledNavLink to={`/bg`}>Начало</StyledNavLink>
@@ -25,6 +25,7 @@ const NavbarLinks = ({isFooter}) => (
 export default NavbarLinks;
 
 const StyledNavLink = styled(Link)`
+  color: white;
   text-transform: uppercase;
   font-weight: 600;
   border-bottom: 1px solid transparent;

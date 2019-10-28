@@ -4,6 +4,7 @@ import Layout from "../components/layout/layout.component";
 import About from "../components/about/about";
 import YoutubeGrid from "../components/youtubeGrid/youtubeGrid";
 import CallToAction from "../components/buttons/callToAction";
+
 const AboutPage = props => {
   const node = props.data.page.edges[0].node;
 
@@ -40,6 +41,28 @@ export const pageQuery = graphql`
             }
           }
           personAboutInfo {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+      }
+    }
+    allContentfulProduct(filter: { node_locale: { eq: "en-US" } }) {
+      edges {
+        node {
+          productName
+          productImage {
+            fluid(maxWidth: 600, maxHeight: 600, background: "rgb:000000") {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
+          productDescription {
+            childMarkdownRemark {
+              html
+            }
+          }
+          productBuyNowButton {
             childMarkdownRemark {
               html
             }
