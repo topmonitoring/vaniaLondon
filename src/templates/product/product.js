@@ -4,7 +4,6 @@ import Img from "gatsby-image";
 import Layout from "../../components/layout/layout.component";
 
 const Product = props => {
-  console.log(props.data);
   const productName = props.data.contentfulProduct.productName;
 
   return (

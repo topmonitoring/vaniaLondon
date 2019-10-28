@@ -28,20 +28,12 @@ export const pageQuery = graphql`
     allContentfulProduct(filter: { node_locale: { eq: "en-US" } }) {
       edges {
         node {
+          node_locale
+          slug
           productName
           productImage {
             fluid(maxWidth: 600, maxHeight: 600, background: "rgb:000000") {
               ...GatsbyContentfulFluid_tracedSVG
-            }
-          }
-          productDescription {
-            childMarkdownRemark {
-              html
-            }
-          }
-          productBuyNowButton {
-            childMarkdownRemark {
-              html
             }
           }
         }

@@ -7,6 +7,7 @@ import CustomButton from "../components/buttons/CustomAnimatedButton";
 import YoutubeGrid from "../components/youtubeGrid/youtubeGrid";
 import CallToAction from "../components/buttons/callToAction";
 import AboutHome from "../components/about.home.section/about.home.section";
+import ProductsGrid from "../components/productsGrid/productsGrid";
 
 const HomePage = props => {
   const about = props.data.allContentfulHomePage.edges[0].node.about.about;
@@ -35,6 +36,7 @@ const HomePage = props => {
       </CallToAction>
       <CallToAction bgr="grey">Vanya Healing Jewellery</CallToAction>
 
+      <ProductsGrid edges={props.data.allContentfulProduct.edges} />
       <CallToAction>
         <CustomButton>Go to Jewellery page</CustomButton>
       </CallToAction>
@@ -60,6 +62,20 @@ export const pageQuery = graphql`
           node_locale
           about {
             about
+          }
+        }
+      }
+    }
+    allContentfulProduct(filter: { node_locale: { eq: "en-US" } }) {
+      edges {
+        node {
+          node_locale
+          slug
+          productName
+          productImage {
+            fluid(maxWidth: 600, maxHeight: 600, background: "rgb:000000") {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
           }
         }
       }
