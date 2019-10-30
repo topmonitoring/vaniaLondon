@@ -15,6 +15,9 @@ export const StyledAboutSection = styled.div`
     width: 90vw;
   }
 `;
+export const StyledEmptySpace = styled.div`
+  width: 40px;
+`;
 export const StyledAboutInfo = styled.div`
   width: 50%;
   padding: 50px;

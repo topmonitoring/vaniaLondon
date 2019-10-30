@@ -6,8 +6,7 @@ import {
   StyledImg,
   StyledFiexedImg,
   StyledContainer,
-  StyledName,
-  StyledTitle
+  StyledEmptySpace
 } from "./about.styles";
 import CustomButton from "../buttons/CustomAnimatedButton";
 import CallToAction from "../buttons/callToAction";
@@ -102,6 +101,8 @@ const About = ({ node }) => (
             </StyledContainer>
           </StyledAboutSection>
           <CallToAction>
+            <CustomButton>See more About Vanq</CustomButton>
+            <StyledEmptySpace />
             <CustomButton>Book a Session</CustomButton>
           </CallToAction>
           <StyledImg fluid={bgr} />

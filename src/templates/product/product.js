@@ -2,31 +2,34 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../../components/layout/layout.component";
+import { StyledContainer, StyledImg } from "./product.styles";
 
 const Product = props => {
   const productName = props.data.contentfulProduct.productName;
 
   return (
     <Layout data={props.data} location={props.location}>
-      <h1>{productName}</h1>
-      <Img
-        fluid={props.data.contentfulProduct.productImage[0].fluid}
-        style={{ width: "600px", height: "400px" }}
-      />
-      <div
-        dangerouslySetInnerHTML={{
-          __html:
-            props.data.contentfulProduct.productDescription.childMarkdownRemark
-              .html
-        }}
-      />
-      <div
-        dangerouslySetInnerHTML={{
-          __html:
-            props.data.contentfulProduct.productBuyNowButton.childMarkdownRemark
-              .html
-        }}
-      />
+      <StyledContainer>
+        <h1>{productName}</h1>
+        <StyledImg
+          fluid={props.data.contentfulProduct.productImage[0].fluid}
+          style={{ width: "600px", height: "400px" }}
+        />
+        <div
+          dangerouslySetInnerHTML={{
+            __html:
+              props.data.contentfulProduct.productDescription
+                .childMarkdownRemark.html
+          }}
+        />
+        <div
+          dangerouslySetInnerHTML={{
+            __html:
+              props.data.contentfulProduct.productBuyNowButton
+                .childMarkdownRemark.html
+          }}
+        />
+      </StyledContainer>
     </Layout>
   );
 };

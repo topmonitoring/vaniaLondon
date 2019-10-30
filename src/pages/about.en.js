@@ -4,6 +4,7 @@ import Layout from "../components/layout/layout.component";
 import About from "../components/about/about";
 import YoutubeGrid from "../components/youtubeGrid/youtubeGrid";
 import CallToAction from "../components/buttons/callToAction";
+import SocialMediaLinks from "../components/social-links/social-links.component";
 
 const AboutPage = props => {
   const node = props.data.page.edges[0].node;
@@ -11,7 +12,10 @@ const AboutPage = props => {
   return (
     <Layout data={props.data} location={props.location}>
       <About node={node} />
-      <CallToAction bgr="grey">Vanya in the Media</CallToAction>
+      <CallToAction>Vanya in the Media</CallToAction>
+      <hr style={{ width: "80vw", fontWeight: "800", color: "black" }} />
+      <SocialMediaLinks />
+      <hr style={{ width: "80vw", fontWeight: "800", color: "black" }} />
       <YoutubeGrid />
     </Layout>
   );
@@ -41,6 +45,11 @@ export const pageQuery = graphql`
             }
           }
           personAboutInfo {
+            childMarkdownRemark {
+              html
+            }
+          }
+          personIntroYoutubeVideo {
             childMarkdownRemark {
               html
             }

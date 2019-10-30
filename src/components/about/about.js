@@ -11,6 +11,11 @@ const About = ({ node }) => (
   <>
     <StyledTitle>{node.personName}</StyledTitle>
     <StyledAboutSection>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: node.personIntroYoutubeVideo.childMarkdownRemark.html
+        }}
+      />
       <StyledAboutInfo
         dangerouslySetInnerHTML={{
           __html: node.personAboutInfo.childMarkdownRemark.html

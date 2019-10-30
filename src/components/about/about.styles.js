@@ -3,11 +3,10 @@ import Img from "gatsby-image";
 
 export const StyledAboutSection = styled.div`
   width: 60%;
-  margin: 10px auto;
+  margin: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-content: center;
-  background-color: grey;
   border-radius: 5px;
   @media screen and (max-width: 800px) {
     flex-direction: column;
@@ -15,7 +14,6 @@ export const StyledAboutSection = styled.div`
   }
 `;
 export const StyledAboutInfo = styled.div`
-  width: 50%;
   margin: 20px auto;
   padding: 50px;
   font-size: 18px;
@@ -28,8 +26,8 @@ export const StyledAboutInfo = styled.div`
   }
 `;
 export const StyledImg = styled(Img)`
-  height: 333;
   width: 600px;
+  height: 300px;
   margin: auto;
   @media screen and (max-width: 800px) {
     height: 250px;

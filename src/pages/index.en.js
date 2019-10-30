@@ -38,7 +38,7 @@ const HomePage = props => {
 
       <ProductsGrid edges={props.data.allContentfulProduct.edges} />
       <CallToAction>
-        <CustomButton>Go to Jewellery page</CustomButton>
+        <CustomButton>See more Jewellery</CustomButton>
       </CallToAction>
     </Layout>
   );

@@ -1,8 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-const Baground = ({ children, bgr }) => {
-  return <StyledBaground bgr={bgr}>{children}</StyledBaground>;
+const Baground = ({ children, bgr, color }) => {
+  return (
+    <StyledBaground bgr={bgr} color={color}>
+      {children}
+    </StyledBaground>
+  );
 };
 
 export default Baground;
@@ -10,8 +14,10 @@ export default Baground;
 export const StyledBaground = styled.h1`
   margin: 0px;
   height: 40px;
+  display: flex;
+  justify-content: center;
   background: ${props => props.bgr};
-  color: white;
+  color: ${props => props.color};
   font-weight: 600;
   padding: 2rem;
   text-align: center;

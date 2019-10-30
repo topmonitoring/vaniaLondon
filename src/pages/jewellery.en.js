@@ -2,11 +2,20 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout/layout.component";
 import ProductsGrid from "../components/productsGrid/productsGrid";
+import CallToAction from "../components/buttons/callToAction";
+import JewlleryBgr from "../components/bagrounds/jewellery.baground";
+import styled from "styled-components";
 
 const JewlleryPage = props => {
   return (
     <Layout data={props.data} location={props.location}>
-      <h3>Jewllery PAge</h3>
+      <JewlleryBgr>
+        <br />
+        <br />
+        <br />
+        <CallToAction>Healing Jewllery By Vanya</CallToAction>
+      </JewlleryBgr>
+
       <ProductsGrid edges={props.data.allContentfulProduct.edges} />
     </Layout>
   );
@@ -40,4 +49,15 @@ export const pageQuery = graphql`
       }
     }
   }
+`;
+
+const StyledInfo = styled.div`
+  text-align: center;
+  margin-top: -80px;
+  margin: auto;
+  font-size: 18px;
+  width: 60%;
+  background-color: aqua;
+  padding: 20px;
+  border-radius: 25px;
 `;

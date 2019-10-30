@@ -1,5 +1,9 @@
 import React from "react";
-import { StyledProductsGrid } from "./ProductsGrid.styles";
+import {
+  StyledProductsGrid,
+  StyledProduct,
+  StyledTitle
+} from "./ProductsGrid.styles";
 import Img from "gatsby-image";
 import { Link } from "gatsby";
 
@@ -13,10 +17,10 @@ const BackgroundSection = ({ edges }) => {
   return (
     <StyledProductsGrid>
       {edges.map(({ node }) => (
-        <Link to={locale + "/" + node.slug} key={node.productName}>
-          <h4>{node.productName}</h4>
+        <StyledProduct to={locale + "/" + node.slug} key={node.productName}>
+          {/*<StyledTitle>{node.productName}</StyledTitle>*/}
           <Img fluid={node.productImage[0].fluid} />
-        </Link>
+        </StyledProduct>
       ))}
     </StyledProductsGrid>
   );

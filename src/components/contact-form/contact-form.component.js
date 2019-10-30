@@ -1,23 +1,23 @@
-import React, {useState} from 'react';
-import {navigate} from 'gatsby-link';
+import React, { useState } from "react";
+import { navigate } from "gatsby-link";
 import {
   StyledEmailInput,
   StyledFormGrid,
   StyledMassegeInput,
   StyledSubmitButton,
   StyledNameInput,
-  StyledSelectInput,
-} from './contact-form.styles';
+  StyledSelectInput
+} from "./contact-form.styles";
 
 function encode(data) {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&');
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
 }
 
 const FormComponent = () => {
   const [inputs, setInputs] = useState({});
-  const [selectValue, setSelectValue] = useState('none selected');
+  const [selectValue, setSelectValue] = useState("none selected");
 
   const handleSelectChange = e => {
     e.persist();
@@ -26,22 +26,22 @@ const FormComponent = () => {
 
   const handleChange = e => {
     e.persist();
-    setInputs(inputs => ({...inputs, [e.target.name]: e.target.value}));
+    setInputs(inputs => ({ ...inputs, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
-    fetch('/contact', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    fetch("/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        'form-name': form.getAttribute('name'),
+        "form-name": form.getAttribute("name"),
         about: selectValue,
-        ...inputs,
-      }),
+        ...inputs
+      })
     })
-      .then(() => navigate(form.getAttribute('action')))
+      .then(() => navigate(form.getAttribute("action")))
       .catch(error => alert(error));
   };
 
@@ -59,7 +59,7 @@ const FormComponent = () => {
         <input type="hidden" name="form-name" value="contact" />
         <div hidden>
           <label>
-            Don’t fill this out:{' '}
+            Don’t fill this out:{" "}
             <input name="bot-field" onChange={handleChange} />
           </label>
         </div>
@@ -67,31 +67,36 @@ const FormComponent = () => {
         <StyledNameInput
           aria-label="name input"
           type="text"
-          name={'name'}
+          name={"name"}
           onChange={handleChange}
-          id={'name'}
+          id={"name"}
           required={true}
-          placeholder={'Your name'}
+          placeholder={"Your name"}
         />
 
         <StyledEmailInput
           aria-label="email input"
           type="email"
-          name={'email'}
+          name={"email"}
           onChange={handleChange}
-          id={'email'}
+          id={"email"}
           required={true}
-          placeholder={'Your e-mail'}
+          placeholder={"Your e-mail"}
         />
         <StyledSelectInput
           aria-label="about selector"
-          name={'about'}
-          id={'about'}
+          name={"about"}
+          id={"about"}
           value={selectValue}
           onChange={handleSelectChange}
         >
           <option value="none selected">What is your message about?</option>
-          <option value="I want to Hire you">I want to hire you</option>
+          <option value="I just booked a session">
+            I just booked a session
+          </option>
+          <option value="I want to rescadule a session">
+            I want to rescadule a session
+          </option>
           <option value="I want you to speak at my event">
             I want you to speak at my event
           </option>
@@ -109,11 +114,11 @@ const FormComponent = () => {
         <StyledMassegeInput
           type="text"
           aria-label="message input"
-          name={'message'}
+          name={"message"}
           onChange={handleChange}
-          id={'message'}
+          id={"message"}
           required={true}
-          placeholder={'Message'}
+          placeholder={"Message"}
         />
 
         <StyledSubmitButton type="submit">Send</StyledSubmitButton>

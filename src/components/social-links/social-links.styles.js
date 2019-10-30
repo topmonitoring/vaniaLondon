@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const SocialLinksContainer = styled.div`
   display: flex;
@@ -15,4 +15,18 @@ export const SocialLinksContainer = styled.div`
       }
     }
   }
-`
+`;
+export const SocialLinksDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  justify-content: center;
+  width: 20vw;
+  text-align: center;
+`;
+export const SocialContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 60vw;
+`;
