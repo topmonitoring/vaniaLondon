@@ -1,21 +1,21 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
   align-content: center;
-  fill-opacity: '0.7';
-  background-color: grey;
+  fill-opacity: "0.7";
+  background-color: rgb(230, 242, 242);
 `;
 export const StyledFooterEnd = styled.div`
   text-align: center;
   margin: auto;
   font-size: 16px;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 `;
 export const StyledFooterGrid = styled.div`
   margin: auto;
   display: grid;
-  grid-template-areas: 'info socials links ';
+  grid-template-areas: "info socials links ";
   grid-template-columns: 2fr 2fr 1fr;
   grid-gap: 50px;
   padding: 20px 200px 20px;
@@ -32,7 +32,7 @@ export const StyledFooterInfo = styled.div`
   grid-area: info;
 
   h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
   }
 `;
 export const StyledFooterSocials = styled.div`
@@ -42,7 +42,7 @@ export const StyledFooterSocials = styled.div`
   }
 
   h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
   }
   @media screen and (max-width: 800px) {
     div {
@@ -54,6 +54,6 @@ export const StyledFooterLinks = styled.div`
   grid-area: links;
 
   h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
   }
 `;

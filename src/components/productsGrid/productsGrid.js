@@ -17,7 +17,10 @@ const BackgroundSection = ({ edges }) => {
   return (
     <StyledProductsGrid>
       {edges.map(({ node }) => (
-        <StyledProduct to={locale + "/" + node.slug} key={node.productName}>
+        <StyledProduct
+          to={"/" + locale + "/" + node.slug}
+          key={node.productName}
+        >
           {/*<StyledTitle>{node.productName}</StyledTitle>*/}
           <Img fluid={node.productImage[0].fluid} />
         </StyledProduct>

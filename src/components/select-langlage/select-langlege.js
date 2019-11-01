@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'gatsby-link';
-import {FormattedMessage} from 'react-intl';
-import styled from 'styled-components';
+import React from "react";
+import Link from "gatsby-link";
+import { FormattedMessage } from "react-intl";
+import styled from "styled-components";
 
 const StyledLink = styled(Link)`
   width: auto;
@@ -18,7 +18,7 @@ const StyledUl = styled.ul`
       width: auto;
       list-style: outside none none;
       &:hover {
-        color: aqua;
+        color: rgb(46, 117, 217);
       }
     }
   }
@@ -30,7 +30,7 @@ const SelectLanguage = props => {
       to={lang.link}
       key={lang.langKey}
       style={{
-        color: 'white',
+        color: "black"
       }}
     >
       <li selected={lang.selected}>{lang.langKey}</li>
@@ -40,8 +40,8 @@ const SelectLanguage = props => {
   return (
     <section
       style={{
-        color: 'white',
-        fontSize: '16px',
+        color: "black",
+        fontSize: "16px"
       }}
     >
       <FormattedMessage id="selectLanguage" />

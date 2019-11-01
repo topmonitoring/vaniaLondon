@@ -25,7 +25,7 @@ const NavbarLinks = ({ isFooter }) => (
 export default NavbarLinks;
 
 const StyledNavLink = styled(Link)`
-  color: white;
+  color: black;
   text-transform: uppercase;
   font-weight: 600;
   border-bottom: 1px solid transparent;
@@ -35,7 +35,7 @@ const StyledNavLink = styled(Link)`
   cursor: pointer;
 
   &:hover {
-    color: aqua;
-    border-bottom: 1px solid aqua;
+    color: rgb(46, 117, 217);
+    border-bottom: 1px solid rgb(46, 117, 217);
   }
 `;

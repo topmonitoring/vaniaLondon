@@ -50,14 +50,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-const StyledInfo = styled.div`
-  text-align: center;
-  margin-top: -80px;
-  margin: auto;
-  font-size: 18px;
-  width: 60%;
-  background-color: aqua;
-  padding: 20px;
-  border-radius: 25px;
-`;

@@ -1,16 +1,16 @@
-import React from 'react';
-import SocialMediaLinks from '../social-links/social-links.component';
+import React from "react";
+import SocialMediaLinks from "../social-links/social-links.component";
 //import { NavListFooter } from '../navigation/navigation.component'
 import {
   StyledFooter,
   StyledFooterEnd,
   StyledFooterGrid,
   StyledFooterInfo,
-  StyledFooterSocials,
-} from './footer.styles';
+  StyledFooterSocials
+} from "./footer.styles";
 
-import './footer.styles.js';
-import NavbarLinks from '../navbar/navbar-links';
+import "./footer.styles.js";
+import NavbarLinks from "../navbar/navbar-links";
 const Footer = () => (
   <StyledFooter>
     <StyledFooterGrid>
@@ -28,7 +28,7 @@ const Footer = () => (
       </div>
     </StyledFooterGrid>
     <StyledFooterEnd>
-      vanyalondon.com © {new Date().getFullYear()} All rights reserved{' '}
+      vanyalondon.com © {new Date().getFullYear()} All rights reserved{" "}
     </StyledFooterEnd>
   </StyledFooter>
 );

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useSpring } from "react-spring";
-import { AnimatedButton } from "./CustomButtonStyles";
+import { AnimatedButton, StyledLink } from "./CustomButtonStyles";
 
-const CustomAnimatedButton = ({ children, ...OtherProps }) => {
+const CustomAnimatedButton = ({ children, to, ...OtherProps }) => {
   const [state, toggle] = useState(true);
   const { x } = useSpring({
     from: { x: 0 },
@@ -22,7 +22,7 @@ const CustomAnimatedButton = ({ children, ...OtherProps }) => {
             .interpolate(x => `scale(${x})`)
         }}
       >
-        {children}
+        <StyledLink to={to}>{children}</StyledLink>
       </AnimatedButton>
     </div>
   );

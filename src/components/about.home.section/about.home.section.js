@@ -101,11 +101,8 @@ const About = ({ node }) => (
               <StyledFiexedImg fluid={forth} />
             </StyledContainer>
           </StyledAboutSection>
-          <CallToAction>
-            <CustomButton>Learn more About Vanya</CustomButton>
-            <StyledEmptySpace />
-            <CustomButton>Book a Session</CustomButton>
-          </CallToAction>
+          <CustomButton to="/en/about">Learn more About Vanya</CustomButton>
+          <br />
           <StyledImg fluid={bgr} />
         </>
       );

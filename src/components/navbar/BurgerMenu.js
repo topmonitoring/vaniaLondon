@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const Burgermenu = props => {
   return (
     <Wrapper onClick={props.handleNavbar}>
-      <div className={props.navbarState ? 'open' : ''}>
+      <div className={props.navbarState ? "open" : ""}>
         <span>&nbsp;</span>
         <span>&nbsp;</span>
         <span>&nbsp;</span>
@@ -27,7 +27,7 @@ const Wrapper = styled.div`
     height: 0.4rem;
     margin-bottom: 0.7rem;
     transition: all ease-in-out 0.2s;
-    background-color: white;
+    background-color: black;
   }
 
   .open span:nth-child(2) {

@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import NavbarLinks from './navbar-links';
-import {useSpring, animated} from 'react-spring';
+import React from "react";
+import styled from "styled-components";
+import NavbarLinks from "./navbar-links";
+import { useSpring, animated } from "react-spring";
 
 const CollapseMenu = props => {
-  const {open} = useSpring({open: props.navbarState ? 0 : 1});
+  const { open } = useSpring({ open: props.navbarState ? 0 : 1 });
 
   if (props.navbarState === true) {
     return (
@@ -13,9 +13,9 @@ const CollapseMenu = props => {
           transform: open
             .interpolate({
               range: [0, 0.2, 0.3, 1],
-              output: [0, -20, 0, -200],
+              output: [0, -20, 0, -200]
             })
-            .interpolate(openValue => `translate3d(0, ${openValue}px, 0`),
+            .interpolate(openValue => `translate3d(0, ${openValue}px, 0`)
         }}
       >
         <NavLinks>
@@ -40,7 +40,7 @@ const CollapseWrapper = styled(animated.div)`
 const NavLinks = styled.ul`
   list-style-type: none;
   padding: 2rem 1rem 2rem 2rem;
-  background-color: grey;
+  background-color: rgb(230, 242, 242);
 
   div {
     div {

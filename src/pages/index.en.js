@@ -8,6 +8,7 @@ import YoutubeGrid from "../components/youtubeGrid/youtubeGrid";
 import CallToAction from "../components/buttons/callToAction";
 import AboutHome from "../components/about.home.section/about.home.section";
 import ProductsGrid from "../components/productsGrid/productsGrid";
+import { Link } from "gatsby";
 
 const HomePage = props => {
   const about = props.data.allContentfulHomePage.edges[0].node.about.about;
@@ -23,22 +24,27 @@ const HomePage = props => {
             }}
           />
           <br />
-          <CustomButton>Book A Session</CustomButton>
+
+          <CustomButton to="/en/bookasession">Book Session</CustomButton>
         </StyledInfo>
       </HomeCover>
-      <CallToAction bgr="grey">Theta Healing ®</CallToAction>
+      <CallToAction bgr=" rgb(230, 242, 242);">Theta Healing ®</CallToAction>
       <AboutHome />
 
-      <CallToAction bgr="grey">Some of My Ameizing clients</CallToAction>
+      <CallToAction bgr=" rgb(230, 242, 242);">
+        Some of My Ameizing clients
+      </CallToAction>
       <YoutubeGrid />
       <CallToAction>
-        <CustomButton>Go to Testemonials</CustomButton>
+        <CustomButton to="/en/bookasession">See more Clients</CustomButton>
       </CallToAction>
-      <CallToAction bgr="grey">Vanya Healing Jewellery</CallToAction>
+      <CallToAction bgr=" rgb(230, 242, 242);">
+        Vanya Healing Jewellery
+      </CallToAction>
 
       <ProductsGrid edges={props.data.allContentfulProduct.edges} />
       <CallToAction>
-        <CustomButton>See more Jewellery</CustomButton>
+        <CustomButton to="/en/jewellery">See more Jewellery</CustomButton>
       </CallToAction>
     </Layout>
   );
@@ -67,7 +73,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulProduct(filter: { node_locale: { eq: "en-US" } }) {
+    allContentfulProduct(filter: { node_locale: { eq: "en-US" } }, limit: 3) {
       edges {
         node {
           node_locale
@@ -95,11 +101,12 @@ const StyledInfo = styled.div`
   height: 60%;
   text-align: center;
   font-size: 20px;
-  color: white;
+  color: black;
   padding: 50px 0px;
-  background-color: grey;
+  background-color: rgb(230, 242, 242);
   opacity: 0.8;
   border-radius: 5px;
+
   @media screen and (max-width: 800px) {
     width: 90vw;
     height: 80vh;
