@@ -16,7 +16,7 @@ const HomePage = props => {
     <Layout data={props.data} location={props.location}>
       <HomeCover>
         <StyledInfo>
-          <h1>Madam Vanya</h1>
+          <h1>{props.data.allContentfulHomePage.edges[0].node.title}</h1>
           <div
             dangerouslySetInnerHTML={{
               __html: about
@@ -59,6 +59,7 @@ export const pageQuery = graphql`
     allContentfulHomePage(filter: { node_locale: { eq: "en-US" } }) {
       edges {
         node {
+          title
           node_locale
           about {
             about

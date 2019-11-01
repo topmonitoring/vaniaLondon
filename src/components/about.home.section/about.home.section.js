@@ -10,6 +10,7 @@ import {
 } from "./about.styles";
 import CustomButton from "../buttons/CustomAnimatedButton";
 import CallToAction from "../buttons/callToAction";
+
 const About = ({ node }) => (
   <StaticQuery
     query={graphql`
@@ -101,7 +102,7 @@ const About = ({ node }) => (
             </StyledContainer>
           </StyledAboutSection>
           <CallToAction>
-            <CustomButton>See more About Vanq</CustomButton>
+            <CustomButton>Learn more About Vanya</CustomButton>
             <StyledEmptySpace />
             <CustomButton>Book a Session</CustomButton>
           </CallToAction>
