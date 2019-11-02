@@ -31,10 +31,17 @@ export const SocialLinksDetails = styled.div`
   justify-content: center;
   width: 20vw;
   text-align: center;
+  @media screen and (max-width: 800px) {
+    font-size: 14px;
+    width: 33vw;
+  }
 `;
 export const SocialContainer = styled.div`
   display: flex;
   flex-direction: row;
   margin: auto;
   width: 60vw;
+  @media screen and (max-width: 800px) {
+    width: 100vw;
+  }
 `;

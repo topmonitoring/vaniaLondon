@@ -36,7 +36,7 @@ const HomePage = props => {
       </CallToAction>
       <YoutubeGrid />
       <CallToAction>
-        <CustomButton to="/en/bookasession">See more Clients</CustomButton>
+        <CustomButton to="/en/bookasession">Book Session</CustomButton>
       </CallToAction>
       <CallToAction bgr=" rgb(230, 242, 242);">
         Vanya Healing Jewellery

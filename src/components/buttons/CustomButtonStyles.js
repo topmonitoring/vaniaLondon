@@ -28,4 +28,5 @@ export const AnimatedButton = styled(animated.div)`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
+  width: auto;
 `;

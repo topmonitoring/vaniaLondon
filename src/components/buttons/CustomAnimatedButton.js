@@ -10,8 +10,9 @@ const CustomAnimatedButton = ({ children, to, ...OtherProps }) => {
     config: { duration: 1000 }
   });
   return (
-    <div onClick={() => toggle(!state)} {...OtherProps}>
+    <StyledLink to={to}>
       <AnimatedButton
+        onClick={() => toggle(!state)}
         {...OtherProps}
         style={{
           transform: x
@@ -22,9 +23,9 @@ const CustomAnimatedButton = ({ children, to, ...OtherProps }) => {
             .interpolate(x => `scale(${x})`)
         }}
       >
-        <StyledLink to={to}>{children}</StyledLink>
+        {children}
       </AnimatedButton>
-    </div>
+    </StyledLink>
   );
 };
 
