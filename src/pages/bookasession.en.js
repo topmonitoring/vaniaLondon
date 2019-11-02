@@ -2,18 +2,11 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout/layout.component";
 import ServicesGrid from "../components/servicesGrid/servicesGrid";
-import styled from "styled-components";
 import JewlleryBgr from "../components/bagrounds/jewellery.baground";
 import BookSessionDetails from "../components/bookSessionDetails/bookSessionDetails";
 
 const BookASessionPage = props => {
   const siteTitle = props.data.site.siteMetadata.title;
-  const session =
-    props.data.allContentfulBookSessionPage.nodes[0].sessionScaduler
-      .childMarkdownRemark.html;
-  const details =
-    props.data.allContentfulBookSessionPage.nodes[0].bankDetails
-      .childMarkdownRemark.html;
 
   return (
     <Layout data={props.data} location={props.location}>
@@ -48,7 +41,7 @@ export const pageQuery = graphql`
         }
         paypalImage {
           fluid(maxWidth: 600, maxHeight: 600, background: "rgb:000000") {
-            ...GatsbyContentfulFluid_tracedSVG
+            ...GatsbyContentfulFluid
           }
         }
         sessionScaduler {
