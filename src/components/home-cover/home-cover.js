@@ -14,7 +14,7 @@ const BackgroundSection = ({ className, children }) => (
               node_locale
               photo {
                 fluid(maxWidth: 1920, background: "rgb:000000") {
-                  ...GatsbyContentfulFluid_tracedSVG
+                  ...GatsbyContentfulFluid
                 }
               }
               about {

@@ -41,7 +41,7 @@ export const pageQuery = graphql`
           personName
           personPicture {
             fluid(maxWidth: 600, maxHeight: 333, background: "rgb:000000") {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
           personAboutInfo {
@@ -63,7 +63,7 @@ export const pageQuery = graphql`
           productName
           productImage {
             fluid(maxWidth: 600, maxHeight: 600, background: "rgb:000000") {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
           productDescription {
