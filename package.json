@@ -26,6 +26,7 @@
     "lodash": "^4.17.10",
     "ptz-i18n": "^1.0.0",
     "react": "^16.3.1",
+    "react-awesome-slider": "^2.1.1",
     "react-dom": "^16.3.1",
     "react-headroom": "^3.0.0",
     "react-helmet": "^5.2.0",

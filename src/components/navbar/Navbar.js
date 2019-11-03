@@ -54,6 +54,9 @@ const NavBar = styled(animated.nav)`
   font-size: 1.2rem;
   background-color: rgb(230, 242, 242);
   z-index: 1;
+  @media (max-width: 1150px) {
+    font-size: 0.7rem;
+  }
 `;
 
 const FlexContainer = styled.div`
@@ -68,7 +71,7 @@ const FlexContainer = styled.div`
 const BurgerWrapper = styled.div`
   margin: auto 0;
 
-  @media (min-width: 769px) {
+  @media (min-width: 800px) {
     display: none;
   }
 `;
@@ -86,7 +89,7 @@ const NavLinks = styled(animated.div)`
     text-align: center;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     display: none;
   }
 `;

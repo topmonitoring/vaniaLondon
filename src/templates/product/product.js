@@ -1,28 +1,55 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
-import Img from "gatsby-image";
+import { graphql } from "gatsby";
 import Layout from "../../components/layout/layout.component";
-import { StyledContainer, StyledImg } from "./product.styles";
+
+import {
+  StyledContainer,
+  StyledImg,
+  StyledBuyNowButton,
+  StyledTitle,
+  StyledDiscription,
+  StyledAwesomeSlider,
+  StyledPurchaseInfo
+} from "./product.styles";
 
 const Product = props => {
   const productName = props.data.contentfulProduct.productName;
-
+  const productImages = props.data.contentfulProduct.productImage;
+  const locale = props.data.contentfulProduct.node_locale;
   return (
     <Layout data={props.data} location={props.location}>
       <StyledContainer>
-        <h1>{productName}</h1>
-        <StyledImg
-          fluid={props.data.contentfulProduct.productImage[0].fluid}
-          style={{ width: "600px", height: "400px" }}
-        />
-        <div
+        <StyledTitle>{productName}</StyledTitle>
+        <StyledAwesomeSlider style={{ width: "900px", zIndex: "0" }}>
+          {productImages.map(image => (
+            <div key={image.id}>
+              <StyledImg fluid={image.fluid} />
+            </div>
+          ))}
+        </StyledAwesomeSlider>
+
+        <StyledDiscription
           dangerouslySetInnerHTML={{
             __html:
               props.data.contentfulProduct.productDescription
                 .childMarkdownRemark.html
           }}
         />
-        <div
+        {locale === "en-US" ? (
+          <StyledPurchaseInfo>
+            Please select below the type of blessing you require on the
+            Jewellery In Details, please put Date of Birth, Country and
+            City/Town of Your Birth
+          </StyledPurchaseInfo>
+        ) : (
+          <StyledPurchaseInfo>
+            Моля изберете вида на благословията, която ви е необходима в
+            ​​подробности, моля, въведете дата на раждане, държава и града в
+            който сте роден/а.
+          </StyledPurchaseInfo>
+        )}
+
+        <StyledBuyNowButton
           dangerouslySetInnerHTML={{
             __html:
               props.data.contentfulProduct.productBuyNowButton
@@ -47,10 +74,11 @@ export const pageQuery = graphql`
       }
     }
     contentfulProduct(id: { eq: $id }) {
+      node_locale
       productName
       productImage {
         fluid(maxWidth: 600, maxHeight: 400, background: "rgb:000000") {
-          ...GatsbyContentfulFluid_tracedSVG
+          ...GatsbyContentfulFluid
         }
       }
       productDescription {
