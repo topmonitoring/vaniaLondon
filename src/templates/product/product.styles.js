@@ -60,13 +60,28 @@ export const StyledBuyNowButton = styled.div`
     }
   }
 `;
-export const StyledTitle = styled.h1``;
+export const StyledTitle = styled.h1`
+  @media screen and (max-width: 800px) {
+    font-size: 22px;
+  }
+`;
 export const StyledDiscription = styled.div`
   padding: 20px;
 `;
 
 export const StyledPurchaseInfo = styled.div`
   color: red;
+  margin: auto;
+  font-weight: 800;
+  font-size: 18px;
+  width: 70%;
+  @media screen and (max-width: 800px) {
+    width: 80vw;
+  }
+`;
+
+export const StyledPurchaseShiping = styled.div`
+  color: blue;
   margin: auto;
   font-weight: 800;
   font-size: 18px;

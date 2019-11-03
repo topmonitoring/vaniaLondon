@@ -19,7 +19,6 @@ const SocialLinks = () => (
     `}
     render={data => {
       const links = data.allContentfulContactInfo.edges[0].node;
-      console.log(links.phoneNumbers);
       return (
         <SocialContainer>
           <SocialLinksDetails>

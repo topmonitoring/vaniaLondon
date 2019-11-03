@@ -9,7 +9,8 @@ import {
   StyledTitle,
   StyledDiscription,
   StyledAwesomeSlider,
-  StyledPurchaseInfo
+  StyledPurchaseInfo,
+  StyledPurchaseShiping
 } from "./product.styles";
 
 const Product = props => {
@@ -36,17 +37,25 @@ const Product = props => {
           }}
         />
         {locale === "en-US" ? (
-          <StyledPurchaseInfo>
-            Please select below the type of blessing you require on the
-            Jewellery In Details, please put Date of Birth, Country and
-            City/Town of Your Birth
-          </StyledPurchaseInfo>
+          <>
+            <StyledPurchaseShiping>Free shiping wordwide</StyledPurchaseShiping>
+            <StyledPurchaseInfo>
+              Please select below the type of blessing you require on the
+              Jewellery In Details, please put Date of Birth, Country and
+              City/Town of Your Birth
+            </StyledPurchaseInfo>
+          </>
         ) : (
-          <StyledPurchaseInfo>
-            Моля изберете вида на благословията, която ви е необходима в
-            ​​подробности, моля, въведете дата на раждане, държава и града в
-            който сте роден/а.
-          </StyledPurchaseInfo>
+          <>
+            <StyledPurchaseShiping>
+              Безплатна доставка навсякаде по света
+            </StyledPurchaseShiping>
+            <StyledPurchaseInfo>
+              Моля изберете вида на благословията, която ви е необходима в
+              ​​подробности, моля, въведете дата на раждане, държава и града в
+              който сте роден/а.
+            </StyledPurchaseInfo>
+          </>
         )}
 
         <StyledBuyNowButton
@@ -77,7 +86,7 @@ export const pageQuery = graphql`
       node_locale
       productName
       productImage {
-        fluid(maxWidth: 600, maxHeight: 400, background: "rgb:000000") {
+        fluid(maxWidth: 800, maxHeight: 600, background: "rgb:000000") {
           ...GatsbyContentfulFluid
         }
       }
